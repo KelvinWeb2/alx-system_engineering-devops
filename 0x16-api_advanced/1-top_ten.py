@@ -18,10 +18,7 @@ def top_ten(subreddit):
         print(None)
         return
 
-    results = response.json().get("data")
-    if results is None or "children" not in results:
-        print(None)
-        return
-    
+   results = response.json().get("data")
+
     [print(c.get("data").get("title")) for c in results.get("children")]
 
