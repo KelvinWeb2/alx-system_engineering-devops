@@ -1,2 +1,2 @@
 #!/bin/bash
-echo ./, ../, $(ls -A | LC_ALL=C sort -V | awk '{print ($0 ~ /\/$/ ? $0 : $0)}' | paste -sd ', ')
+echo "./, ../, $(ls -a | LC_ALL=C sort -V | awk '{if(NR>2){print (system("[ -d \""$0"\" ]") == 0 ? $0"/" : $0)}}' | paste -sd, -)"
