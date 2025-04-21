@@ -1,1 +1,2 @@
-find . -empty -print | rev | cut -d '/' -f 1 | rev
+#!/bin/bash
+for file in *.*; do echo "${file%.*}"; done | sort -f
